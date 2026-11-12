@@ -17,151 +17,247 @@
 
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            pnlCard = new Panel();
+            pnlForm = new Panel();
+            linkRegister = new LinkLabel();
+            btnSignIn = new Button();
             txtPassword = new TextBox();
             lblPassword = new Label();
-            label3 = new Label();
-            linkRegister = new LinkLabel();
-            label4 = new Label();
-            btnSignIn = new Button();
-            label5 = new Label();
             txtUsername = new TextBox();
             lblUsername = new Label();
-            panel1.SuspendLayout();
+            lblSubtext = new Label();
+            lblWelcome = new Label();
+            pnlBrand = new Panel();
+            lblBrandFooter = new Label();
+            lblBrandSub = new Label();
+            pnlDivider = new Panel();
+            lblBrandTitle = new Label();
+            pnlCard.SuspendLayout();
+            pnlForm.SuspendLayout();
+            pnlBrand.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // pnlCard
             // 
-            panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.MediumSeaGreen;
-            panel1.Controls.Add(txtPassword);
-            panel1.Controls.Add(lblPassword);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(linkRegister);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(btnSignIn);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(txtUsername);
-            panel1.Controls.Add(lblUsername);
-            panel1.Location = new Point(215, 42);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(763, 725);
-            panel1.TabIndex = 10;
+            pnlCard.BackColor = Color.White;
+            pnlCard.BorderStyle = BorderStyle.FixedSingle;
+            pnlCard.Controls.Add(pnlForm);
+            pnlCard.Controls.Add(pnlBrand);
+            pnlCard.Location = new Point(69, 73);
+            pnlCard.Margin = new Padding(3, 4, 3, 4);
+            pnlCard.Name = "pnlCard";
+            pnlCard.Size = new Size(868, 573);
+            pnlCard.TabIndex = 0;
+            // 
+            // pnlForm
+            // 
+            pnlForm.BackColor = Color.White;
+            pnlForm.Controls.Add(linkRegister);
+            pnlForm.Controls.Add(btnSignIn);
+            pnlForm.Controls.Add(txtPassword);
+            pnlForm.Controls.Add(lblPassword);
+            pnlForm.Controls.Add(txtUsername);
+            pnlForm.Controls.Add(lblUsername);
+            pnlForm.Controls.Add(lblSubtext);
+            pnlForm.Controls.Add(lblWelcome);
+            pnlForm.Dock = DockStyle.Fill;
+            pnlForm.Location = new Point(354, 0);
+            pnlForm.Margin = new Padding(3, 4, 3, 4);
+            pnlForm.Name = "pnlForm";
+            pnlForm.Size = new Size(512, 571);
+            pnlForm.TabIndex = 1;
+            // 
+            // linkRegister
+            // 
+            linkRegister.ActiveLinkColor = Color.FromArgb(46, 125, 82);
+            linkRegister.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            linkRegister.LinkBehavior = LinkBehavior.HoverUnderline;
+            linkRegister.LinkColor = Color.FromArgb(34, 96, 62);
+            linkRegister.Location = new Point(57, 453);
+            linkRegister.Name = "linkRegister";
+            linkRegister.Size = new Size(400, 33);
+            linkRegister.TabIndex = 7;
+            linkRegister.TabStop = true;
+            linkRegister.Text = "Don't have an account? Register here.";
+            linkRegister.TextAlign = ContentAlignment.MiddleCenter;
+            linkRegister.LinkClicked += linkRegister_LinkClicked;
+            // 
+            // btnSignIn
+            // 
+            btnSignIn.BackColor = Color.FromArgb(34, 96, 62);
+            btnSignIn.Cursor = Cursors.Hand;
+            btnSignIn.FlatAppearance.BorderSize = 0;
+            btnSignIn.FlatAppearance.MouseOverBackColor = Color.FromArgb(46, 125, 82);
+            btnSignIn.FlatStyle = FlatStyle.Flat;
+            btnSignIn.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnSignIn.ForeColor = Color.White;
+            btnSignIn.Location = new Point(57, 368);
+            btnSignIn.Margin = new Padding(3, 4, 3, 4);
+            btnSignIn.Name = "btnSignIn";
+            btnSignIn.Size = new Size(400, 59);
+            btnSignIn.TabIndex = 6;
+            btnSignIn.Text = "SIGN IN";
+            btnSignIn.UseVisualStyleBackColor = false;
+            btnSignIn.Click += btnSignIn_Click;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(124, 422);
+            txtPassword.BackColor = Color.FromArgb(245, 250, 247);
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtPassword.Font = new Font("Segoe UI", 11.5F);
+            txtPassword.Location = new Point(57, 293);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(506, 27);
-            txtPassword.TabIndex = 11;
+            txtPassword.Size = new Size(400, 33);
+            txtPassword.TabIndex = 5;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(124, 394);
+            lblPassword.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblPassword.ForeColor = Color.FromArgb(45, 65, 55);
+            lblPassword.Location = new Point(57, 263);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(91, 25);
-            lblPassword.TabIndex = 9;
-            lblPassword.Text = "Password:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Vineta BT", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(124, 66);
-            label3.Name = "label3";
-            label3.Size = new Size(531, 41);
-            label3.TabIndex = 5;
-            label3.Text = "TORRES INVENTORY";
-            // 
-            // linkRegister
-            // 
-            linkRegister.AutoSize = true;
-            linkRegister.Location = new Point(209, 642);
-            linkRegister.Name = "linkRegister";
-            linkRegister.Size = new Size(257, 20);
-            linkRegister.TabIndex = 8;
-            linkRegister.TabStop = true;
-            linkRegister.Text = "Don't have an account? Register here.";
-            linkRegister.LinkClicked += linkRegister_LinkClicked;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Vineta BT", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(259, 124);
-            label4.Name = "label4";
-            label4.Size = new Size(207, 38);
-            label4.TabIndex = 6;
-            label4.Text = "SYSTEM";
-            // 
-            // btnSignIn
-            // 
-            btnSignIn.BackColor = Color.MidnightBlue;
-            btnSignIn.ForeColor = SystemColors.ControlLightLight;
-            btnSignIn.Location = new Point(279, 569);
-            btnSignIn.Name = "btnSignIn";
-            btnSignIn.Size = new Size(142, 40);
-            btnSignIn.TabIndex = 4;
-            btnSignIn.Text = "Sign In";
-            btnSignIn.UseVisualStyleBackColor = false;
-            btnSignIn.Click += btnSignIn_Click;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Emoji", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(279, 178);
-            label5.Name = "label5";
-            label5.Size = new Size(191, 22);
-            label5.TabIndex = 7;
-            label5.Text = "Sign In to your Account";
-            label5.UseWaitCursor = true;
+            lblPassword.Size = new Size(82, 21);
+            lblPassword.TabIndex = 4;
+            lblPassword.Text = "Password";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(124, 347);
+            txtUsername.BackColor = Color.FromArgb(245, 250, 247);
+            txtUsername.BorderStyle = BorderStyle.FixedSingle;
+            txtUsername.Font = new Font("Segoe UI", 11.5F);
+            txtUsername.Location = new Point(57, 200);
+            txtUsername.Margin = new Padding(3, 4, 3, 4);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(506, 27);
-            txtUsername.TabIndex = 2;
+            txtUsername.Size = new Size(400, 33);
+            txtUsername.TabIndex = 3;
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsername.Location = new Point(124, 319);
-            lblUsername.Margin = new Padding(4, 0, 4, 0);
+            lblUsername.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblUsername.ForeColor = Color.FromArgb(45, 65, 55);
+            lblUsername.Location = new Point(57, 169);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(95, 25);
-            lblUsername.TabIndex = 1;
-            lblUsername.Text = "Username:";
+            lblUsername.Size = new Size(87, 21);
+            lblUsername.TabIndex = 2;
+            lblUsername.Text = "Username";
+            // 
+            // lblSubtext
+            // 
+            lblSubtext.AutoSize = true;
+            lblSubtext.Font = new Font("Segoe UI", 9.5F);
+            lblSubtext.ForeColor = Color.FromArgb(110, 125, 118);
+            lblSubtext.Location = new Point(58, 109);
+            lblSubtext.Name = "lblSubtext";
+            lblSubtext.Size = new Size(252, 21);
+            lblSubtext.TabIndex = 1;
+            lblSubtext.Text = "Sign in to your account to continue";
+            // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblWelcome.ForeColor = Color.FromArgb(25, 70, 45);
+            lblWelcome.Location = new Point(54, 56);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(262, 46);
+            lblWelcome.TabIndex = 0;
+            lblWelcome.Text = "Welcome Back!";
+            // 
+            // pnlBrand
+            // 
+            pnlBrand.BackColor = Color.FromArgb(34, 96, 62);
+            pnlBrand.Controls.Add(lblBrandFooter);
+            pnlBrand.Controls.Add(lblBrandSub);
+            pnlBrand.Controls.Add(pnlDivider);
+            pnlBrand.Controls.Add(lblBrandTitle);
+            pnlBrand.Dock = DockStyle.Left;
+            pnlBrand.Location = new Point(0, 0);
+            pnlBrand.Margin = new Padding(3, 4, 3, 4);
+            pnlBrand.Name = "pnlBrand";
+            pnlBrand.Size = new Size(354, 571);
+            pnlBrand.TabIndex = 0;
+            // 
+            // lblBrandFooter
+            // 
+            lblBrandFooter.Font = new Font("Segoe UI", 8.5F);
+            lblBrandFooter.ForeColor = Color.FromArgb(180, 220, 195);
+            lblBrandFooter.Location = new Point(37, 509);
+            lblBrandFooter.Name = "lblBrandFooter";
+            lblBrandFooter.Size = new Size(280, 29);
+            lblBrandFooter.TabIndex = 3;
+            lblBrandFooter.Text = "Admin & Inventory Control Portal";
+            // 
+            // lblBrandSub
+            // 
+            lblBrandSub.Font = new Font("Segoe UI", 10F);
+            lblBrandSub.ForeColor = Color.FromArgb(215, 242, 225);
+            lblBrandSub.Location = new Point(37, 309);
+            lblBrandSub.Name = "lblBrandSub";
+            lblBrandSub.Size = new Size(280, 87);
+            lblBrandSub.TabIndex = 2;
+            lblBrandSub.Text = "Manage products, monitor stock levels, and track inventory in real time.";
+            // 
+            // pnlDivider
+            // 
+            pnlDivider.BackColor = Color.FromArgb(130, 224, 170);
+            pnlDivider.Location = new Point(39, 283);
+            pnlDivider.Margin = new Padding(3, 4, 3, 4);
+            pnlDivider.Name = "pnlDivider";
+            pnlDivider.Size = new Size(63, 5);
+            pnlDivider.TabIndex = 1;
+            // 
+            // lblBrandTitle
+            // 
+            lblBrandTitle.Font = new Font("Segoe UI", 21F, FontStyle.Bold);
+            lblBrandTitle.ForeColor = Color.White;
+            lblBrandTitle.Location = new Point(34, 109);
+            lblBrandTitle.Name = "lblBrandTitle";
+            lblBrandTitle.Size = new Size(286, 160);
+            lblBrandTitle.TabIndex = 0;
+            lblBrandTitle.Text = "TORRES\r\nINVENTORY\r\nSYSTEM";
             // 
             // SignInForm
             // 
+            AcceptButton = btnSignIn;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.PaleGreen;
-            ClientSize = new Size(1193, 808);
-            Controls.Add(panel1);
+            BackColor = Color.FromArgb(240, 248, 243);
+            ClientSize = new Size(1098, 768);
+            Controls.Add(pnlCard);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
             Name = "SignInForm";
-            Text = "SignInForm";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Torres Inventory System - Sign In";
+            pnlCard.ResumeLayout(false);
+            pnlForm.ResumeLayout(false);
+            pnlForm.PerformLayout();
+            pnlBrand.ResumeLayout(false);
             ResumeLayout(false);
+
         }
 
         #endregion
 
-        private Panel panel1;
-        private Label label3;
-        private LinkLabel linkRegister;
-        private Label label4;
-        private Button btnSignIn;
-        private Label label5;
-        private TextBox txtUsername;
-        private Label lblUsername;
-        private Label lblPassword;
-        private TextBox txtPassword;
+        private System.Windows.Forms.Panel pnlCard;
+        private System.Windows.Forms.Panel pnlBrand;
+        private System.Windows.Forms.Label lblBrandTitle;
+        private System.Windows.Forms.Panel pnlDivider;
+        private System.Windows.Forms.Label lblBrandSub;
+        private System.Windows.Forms.Label lblBrandFooter;
+        private System.Windows.Forms.Panel pnlForm;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Label lblSubtext;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnSignIn;
+        private System.Windows.Forms.LinkLabel linkRegister;
     }
 }

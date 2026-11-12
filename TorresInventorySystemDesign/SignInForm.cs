@@ -10,10 +10,11 @@ namespace TorresInventorySystemDesign
         public SignInForm()
         {
             InitializeComponent();
-            CreateDatabase(); 
+            txtPassword.UseSystemPasswordChar = true; 
+            CreateDatabase();
         }
 
-        
+
         private void CreateDatabase()
         {
             string dbName = "sampledb.accdb";

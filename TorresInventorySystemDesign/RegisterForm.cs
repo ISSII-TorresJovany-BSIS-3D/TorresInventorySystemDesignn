@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 namespace TorresInventorySystemDesign
 {
@@ -16,14 +11,15 @@ namespace TorresInventorySystemDesign
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void linkSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            SignInForm loginForm = new SignInForm();
+            loginForm.Show();
+            this.Hide();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            
             if (string.IsNullOrWhiteSpace(txtFullName.Text) ||
                 string.IsNullOrWhiteSpace(txtUsername.Text) ||
                 string.IsNullOrWhiteSpace(txtPassword.Text) ||
@@ -33,14 +29,12 @@ namespace TorresInventorySystemDesign
                 return;
             }
 
-            
             if (txtPassword.Text != txtConfirmPassword.Text)
             {
                 MessageBox.Show("Hindi nagtutugma ang Password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            
             string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=sampledb.accdb;";
             string query = "INSERT INTO Users (FullName, Username, [Password]) VALUES (?, ?, ?)";
 
@@ -51,14 +45,13 @@ namespace TorresInventorySystemDesign
                     conn.Open();
                     using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("?", txtFullName.Text);
-                        cmd.Parameters.AddWithValue("?", txtUsername.Text);
-                        cmd.Parameters.AddWithValue("?", txtPassword.Text);
+                        cmd.Parameters.AddWithValue("?", txtFullName.Text.Trim());
+                        cmd.Parameters.AddWithValue("?", txtUsername.Text.Trim());
+                        cmd.Parameters.AddWithValue("?", txtPassword.Text.Trim());
 
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Matagumpay na nakapag-register!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        
                         SignInForm loginForm = new SignInForm();
                         loginForm.Show();
                         this.Hide();
